@@ -63,7 +63,13 @@ export default class Swiper extends Component {
         if (this.props.enabled) {
           let dx = gestureState.dx;
           let offsetX = -dx / this.state.viewWidth + this.state.index;
-
+          if (this.state.index === 0) {
+            //outter bound on the left
+            if (offsetX < 0) return;
+          } else if (this.state.index === this.props.children.length - 1) {
+            //outter bound on the right
+            if (offsetX > 1) return;
+          }
           this.state.scrollValue.setValue(offsetX);
         }
       }
