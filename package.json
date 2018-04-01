@@ -1,0 +1,41 @@
+{
+  "name": "react-native-swiper",
+  "version": "0.0.1",
+  "description": "A snapchat like swappable component for react-native",
+  "main": "src/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoyalSix/react-native-swiper.git"
+  },
+  "keywords": [
+    "react-native",
+    "swiper",
+    "snapchat",
+    "scroll"
+  ],
+  "author": "RoyalSix",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RoyalSix/react-native-swiper/issues"
+  },
+  "homepage": "https://github.com/RoyalSix/react-native-swiper#readme",
+  "devDependencies": {
+    "babel-eslint": "^4.1.8",
+    "eslint": "^1.10.3",
+    "eslint-config-fixt": "^1.0.1",
+    "eslint-plugin-react": "^3.16.1"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "peerDependencies": {
+    "react": "0.14.x || 15.x.x",
+    "react-native": ">=0.18.0 <=0.29.0"
+  }
+}
