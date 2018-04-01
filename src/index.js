@@ -11,25 +11,6 @@ import {
 import Dots from './dots';
 
 export default class Swiper extends Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    index: PropTypes.number,
-    threshold: PropTypes.number,
-    pager: PropTypes.bool,
-    onPageChange: PropTypes.func,
-    activeDotColor: PropTypes.string,
-    enabled: PropTypes.bool.isRequired
-  };
-
-  static defaultProps = {
-    enabled: true,
-    index: 0,
-    pager: true,
-    threshold: 25,
-    onPageChange: () => { },
-    activeDotColor: 'blue',
-  };
-
   constructor(props) {
     super(props);
 
@@ -143,4 +124,22 @@ export default class Swiper extends Component {
       </View>
     );
   }
+}
+
+Swiper.propTypes = {
+  enabled: PropTypes.bool.isRequired,
+  index: PropTypes.number.isRequired,
+  pager: PropTypes.bool.isRequired,
+  threshold: PropTypes.number.isRequired,
+  onPageChange: PropTypes.func.isRequired,
+  activeDotColor: PropTypes.string.isRequired,
+}
+
+Swiper.defaultProps = {
+  enabled: true,
+  index: 0,
+  pager: true,
+  threshold: 25,
+  onPageChange: () => { },
+  activeDotColor: 'blue',
 }

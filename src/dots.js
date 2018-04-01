@@ -9,35 +9,35 @@ import {
 import Dot from './dot';
 
 export default class Dots extends Component {
-  static propTypes = {
-    total: PropTypes.number,
-    active: PropTypes.number,
-  };
-
-  static defaultProps = {
-    total: 0,
-    active: -1,
-  };
-
   render() {
     const { total, active } = this.props;
 
     const range = Array.from(new Array(total), (x, i) => i);
 
     return (
-      <View style={ [styles.dots, this.props.style] }>
-       { range.map(i => {
+      <View style={[styles.dots, this.props.style]}>
+        {range.map(i => {
           return (
             <Dot
-              color={ i === active ? this.props.activeColor : this.props.color }
-              key={ i }
+              color={i === active ? this.props.activeColor : this.props.color}
+              key={i}
             />
           );
-        }) }
+        })}
       </View>
     );
   }
 }
+
+Dots.propTypes = {
+  total: PropTypes.number.isRequired,
+  active: PropTypes.number.isRequired,
+}
+
+Dots.defaultProps = {
+  total: 0,
+  active: -1,
+};
 
 const styles = StyleSheet.create({
   dots: {

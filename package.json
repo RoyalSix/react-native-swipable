@@ -1,17 +1,15 @@
 {
-  "name": "react-native-swiper",
-  "version": "0.0.1",
+  "name": "react-native-swipable",
+  "version": "0.0.2",
   "description": "A snapchat like swappable component for react-native",
-  "main": "src/index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "rimraf lib && babel src/ --out-dir lib --presets latest --copy-files --retain-lines",
+    "prepublish": "npm run compile"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RoyalSix/react-native-swiper.git"
+    "url": "git+https://github.com/RoyalSix/react-native-swipable.git"
   },
   "keywords": [
     "react-native",
@@ -22,14 +20,24 @@
   "author": "RoyalSix",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RoyalSix/react-native-swiper/issues"
+    "url": "https://github.com/RoyalSix/react-native-swipable/issues"
   },
-  "homepage": "https://github.com/RoyalSix/react-native-swiper#readme",
+  "homepage": "https://github.com/RoyalSix/react-native-swipable#readme",
+  "dependencies": {
+    "babel-register": "^6.26.0",
+    "babel-runtime": "^6.23.0"
+  },
   "devDependencies": {
-    "babel-eslint": "^4.1.8",
-    "eslint": "^1.10.3",
-    "eslint-config-fixt": "^1.0.1",
-    "eslint-plugin-react": "^3.16.1"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "rimraf": "2.6.2"
   },
   "engines": {
     "node": ">=4"
@@ -37,5 +45,10 @@
   "peerDependencies": {
     "react": "0.14.x || 15.x.x",
     "react-native": ">=0.18.0 <=0.29.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   }
 }
