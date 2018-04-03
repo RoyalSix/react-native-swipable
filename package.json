@@ -1,6 +1,6 @@
 {
   "name": "react-native-swipable",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A snapchat like swappable component for react-native",
   "main": "lib/index.js",
   "scripts": {

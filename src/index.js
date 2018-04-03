@@ -34,7 +34,7 @@ export default class Swiper extends Component {
         newIndex = newIndex - 1;
       }
 
-      this.props.enabled ? this.goToPage(newIndex) : null;
+      this.goToPage(newIndex)
     };
 
     this._panResponder = PanResponder.create({
@@ -60,18 +60,16 @@ export default class Swiper extends Component {
 
       // Dragging, move the view with the touch
       onPanResponderMove: (e, gestureState) => {
-        if (this.props.enabled) {
-          let dx = gestureState.dx;
-          let offsetX = -dx / this.state.viewWidth + this.state.index;
-          if (this.state.index === 0) {
-            //outter bound on the left
-            if (offsetX < 0) return;
-          } else if (this.state.index === this.props.children.length - 1) {
-            //outter bound on the right
-            if (offsetX > 1) return;
-          }
-          this.state.scrollValue.setValue(offsetX);
+        let dx = gestureState.dx;
+        let offsetX = -dx / this.state.viewWidth + this.state.index;
+        if (this.state.index === 0) {
+          //outter bound on the left
+          if (offsetX < 0) return;
+        } else if (this.state.index === this.props.children.length - 1) {
+          //outter bound on the right
+          if (offsetX > 1) return;
         }
+        this.state.scrollValue.setValue(offsetX);
       }
     });
   }
@@ -133,7 +131,6 @@ export default class Swiper extends Component {
 }
 
 Swiper.propTypes = {
-  enabled: PropTypes.bool.isRequired,
   index: PropTypes.number.isRequired,
   pager: PropTypes.bool.isRequired,
   threshold: PropTypes.number.isRequired,
@@ -142,7 +139,6 @@ Swiper.propTypes = {
 }
 
 Swiper.defaultProps = {
-  enabled: true,
   index: 0,
   pager: true,
   threshold: 25,
